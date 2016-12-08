@@ -26,6 +26,13 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
     libantradio
+    
+# Buttons & Gestures
+PRODUCT_BUTTON_GESTURES_PACKAGES := \
+	oppo-keyhandler \
+	ConfigPanel
+
+PRODUCT_PACKAGES  += $(PRODUCT_BUTTON_GESTURES_PACKAGES)
 
 # API (for CTS backward compatibility)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -213,6 +220,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.bacon.rc \
     libinit_bacon \
+    init.lk.rc \
     ueventd.bacon.rc
 
 PRODUCT_PACKAGES += \
@@ -229,6 +237,10 @@ PRODUCT_COPY_FILES += \
 # Widevine
 PRODUCT_PACKAGES += \
     libshim_wvm
+
+# Telephony
+PRODUCT_PACKAGES  += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
 
 # WiFi
 PRODUCT_COPY_FILES += \

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 halogenOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-/* MediaBufferGroup::MediaBufferGroup */
-extern "C" int _ZN7android16MediaBufferGroupC1Ej(unsigned int);
-extern "C" int _ZN7android16MediaBufferGroupC1Ev() {
-    return _ZN7android16MediaBufferGroupC1Ej(0);
+package org.halogenos.hardware.buttons;
+
+import org.halogenos.hardware.buttons.IButtonBacklightControl;
+
+/**
+ * This class is supposed to control button backlight
+ */
+public class ButtonBacklightControl extends IButtonBacklightControl {
+    
+    public ButtonBacklightControl() {
+        CONTROL_TYPE = CONTROL_TYPE_PARTIAL;
+    }
+
 }
