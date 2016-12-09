@@ -51,14 +51,7 @@ BOARD_DTBTOOL_ARGS := -2
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := lightning_bacon_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8974
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-
-#Kernel Toolchain		
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-5.3/bin		
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-		
-		
-# Rom Toolchain		
-TARGET_GCC_VERSION_EXP := 5.3
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-6.0/bin/arm-eabi-
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -172,6 +165,7 @@ BOARD_SEPOLICY_DIRS += \
 
 # Sensors
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+USE_COMPAT_SENSORS_M := true
 
 # Snapdragon LLVM
 TARGET_USE_SDCLANG := true
